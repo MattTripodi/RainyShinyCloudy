@@ -13,6 +13,8 @@
 		EE81361A1ED658910066DFEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE8136181ED658910066DFEF /* Main.storyboard */; };
 		EE81361C1ED658910066DFEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE81361B1ED658910066DFEF /* Assets.xcassets */; };
 		EE81361F1ED658910066DFEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE81361D1ED658910066DFEF /* LaunchScreen.storyboard */; };
+		EEF1541D1EDC9EB9001AE0CE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1541C1EDC9EB9001AE0CE /* Constants.swift */; };
+		EEF1541F1EDDDE6A001AE0CE /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1541E1EDDDE6A001AE0CE /* CurrentWeather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		EE81361B1ED658910066DFEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE81361E1ED658910066DFEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE8136201ED658910066DFEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEF1541C1EDC9EB9001AE0CE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EEF1541E1EDDDE6A001AE0CE /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 				EE81361B1ED658910066DFEF /* Assets.xcassets */,
 				EE81361D1ED658910066DFEF /* LaunchScreen.storyboard */,
 				EE8136201ED658910066DFEF /* Info.plist */,
+				EEF1541C1EDC9EB9001AE0CE /* Constants.swift */,
+				EEF1541E1EDDDE6A001AE0CE /* CurrentWeather.swift */,
 			);
 			path = RainyShinyCloudy;
 			sourceTree = "<group>";
@@ -214,6 +220,8 @@
 			files = (
 				EE8136171ED658910066DFEF /* WeatherVC.swift in Sources */,
 				EE8136151ED658910066DFEF /* AppDelegate.swift in Sources */,
+				EEF1541F1EDDDE6A001AE0CE /* CurrentWeather.swift in Sources */,
+				EEF1541D1EDC9EB9001AE0CE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
