@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import CoreLocation
 import Alamofire
 
-class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
 	
 	//IBOutlets 
 	@IBOutlet weak var dateLabel: UILabel!
@@ -19,29 +20,51 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	@IBOutlet weak var currentWeatherTypeLabel: UILabel!
 	@IBOutlet weak var tableView: UITableView!
 	
-	var currentWeather = CurrentWeather()
+	let locationManager = CLLocationManager()
+	var currentLocation: CLLocation!
+	
+	var currentWeather: CurrentWeather!
 	var forecast: Forecast!
 	var forecasts = [Forecast]()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		locationManager.delegate = self
+		locationManager.desiredAccuracy = kCLLocationAccuracyBest
+		locationManager.requestWhenInUseAuthorization()
+		locationManager.startMonitoringSignificantLocationChanges()
+		
 		tableView.delegate = self
 		tableView.dataSource = self
 		
 		currentWeather = CurrentWeather()
-		
-		currentWeather.downloadWeatherDetails {
-			self.downloadForecastData {
-				self.updateMainUI()
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		locationAuthStatus()
+	}
+	
+	func locationAuthStatus() {
+		if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+			currentLocation = locationManager.location
+			Location.sharedInstance.latitude = currentLocation.coordinate.latitude
+			Location.sharedInstance.longitude = currentLocation.coordinate.longitude
+			currentWeather.downloadWeatherDetails {
+				self.downloadForecastData {
+					self.updateMainUI()
+				}
 			}
+		} else {
+			locationManager.requestWhenInUseAuthorization()
+			locationAuthStatus()
 		}
 	}
 	
 	func downloadForecastData(completed: @escaping DownloadComplete) {
 		//Downloading forecast weather data for TableView
-		let forecastURL = URL(string: FORCAST_URL)!
-		Alamofire.request(forecastURL).responseJSON { response in
+		Alamofire.request(FORECAST_URL).responseJSON { response in
 			let result = response.result
 			
 			if let dict = result.value as? Dictionary<String, AnyObject> {
@@ -88,6 +111,7 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		locationLabel.text = currentWeather.cityName
 		currentWeatherImage.image = UIImage(named: currentWeather.weatherType)
 	}
+	
 }
 
 

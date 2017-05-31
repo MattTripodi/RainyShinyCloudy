@@ -17,6 +17,7 @@
 		EEF1541F1EDDDE6A001AE0CE /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1541E1EDDDE6A001AE0CE /* CurrentWeather.swift */; };
 		EEF154211EDDF4B8001AE0CE /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF154201EDDF4B8001AE0CE /* Forecast.swift */; };
 		EEF154231EDF369D001AE0CE /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF154221EDF369D001AE0CE /* WeatherCell.swift */; };
+		EEF154251EDF4000001AE0CE /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF154241EDF4000001AE0CE /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		EEF1541E1EDDDE6A001AE0CE /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		EEF154201EDDF4B8001AE0CE /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		EEF154221EDF369D001AE0CE /* WeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
+		EEF154241EDF4000001AE0CE /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				EEF1541C1EDC9EB9001AE0CE /* Constants.swift */,
 				EEF154201EDDF4B8001AE0CE /* Forecast.swift */,
 				EEF154221EDF369D001AE0CE /* WeatherCell.swift */,
+				EEF154241EDF4000001AE0CE /* Location.swift */,
 			);
 			path = RainyShinyCloudy;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				EEF1541F1EDDDE6A001AE0CE /* CurrentWeather.swift in Sources */,
 				EEF1541D1EDC9EB9001AE0CE /* Constants.swift in Sources */,
 				EEF154211EDDF4B8001AE0CE /* Forecast.swift in Sources */,
+				EEF154251EDF4000001AE0CE /* Location.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
